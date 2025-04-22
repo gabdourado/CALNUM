@@ -42,8 +42,6 @@ O Método da Falsa Posição (ou *Regula Falsi*) é uma variação do **Método 
 
 1. **Escolha do Intervalo Inicial**: Defina um intervalo $[a, b]$ tal que $f(a) \cdot f(b) < 0$.
 
-2. **Cálculo do Ponto Médio**: Calcule o Ponto Médio do intervalo $c = \frac{(a + b)}{2}$
-
 2. **Cálculo da Média “Pesada”**: Calcule o ponto $c$ como: $c = \frac{a\cdot f(b) - b \cdot f(a)}{f(b) - f(a)}$
 
 3. **Teste da Raiz**:
