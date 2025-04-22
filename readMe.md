@@ -5,19 +5,19 @@ Este repositório contém a implementação em Python de algoritmos numéricos e
 1. Método da Bissecção
 2. Método da Falsa Posição
 
-As implementações, até o momento, só calculam raizes de funções polinômiais. 😆
+**As implementações, até o momento, só calculam raizes de funções polinômiais.**
 
 ---
 
-## 📌 Método da Bissecção
+## Método da Bissecção
 
 O Método da Bissecção é um algoritmo numérico que permite encontrar raízes de funções contínuas em um intervalo onde a função muda de sinal. Baseia-se no **Teorema do Valor Intermediário**, que garante a existência de uma raiz no intervalo.
 
-### 🔎 Teorema do Valor Intermediário (Teorema de Bolzano)
+### Teorema do Valor Intermediário (Teorema de Bolzano)
 
 > Se $f(x)$ for uma função contínua em um intervalo $[a, b]$ e $f(a)$ e $f(b)$ tiverem sinais opostos, ou seja, $f(a) \cdot f(b) < 0$, então existe pelo menos um ponto $c \in [a, b]$ tal que $f(c) = 0$.
 
-### 🧮 Etapas do Método
+### Etapas do Método
 
 1. **Escolha do Intervalo Inicial**: Defina um intervalo $[a, b]$ tal que $f(a) \cdot f(b) < 0$.
 
@@ -34,11 +34,11 @@ Repita o processo até que a diferença entre $b$ e $a$ seja menor que a precis�
 
 ---
 
-# 📌 Método da Falsa Posição
+## Método da Falsa Posição
 
 O Método da Falsa Posição (ou *Regula Falsi*) é uma variação do **Método da Bissecção**, mas tende a ser mais eficiente em alguns casos, pois utiliza uma reta secante entre dois pontos para estimar a raiz.
 
-### 🧮 Etapas do Método
+### Etapas do Método
 
 1. **Escolha do Intervalo Inicial**: Defina um intervalo $[a, b]$ tal que $f(a) \cdot f(b) < 0$.
 
