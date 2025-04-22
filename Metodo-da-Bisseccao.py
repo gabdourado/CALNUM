@@ -1,4 +1,4 @@
-""" NOTA: É importante notar que o método só funciona para funções do polinômiais """
+""" NOTA: É importante perceber que o método só funciona para funções do polinômiais """
 
 from prettytable import PrettyTable
 
@@ -35,7 +35,7 @@ def sinal(fa, fc):
   elif fa * fc > 0: return '+'
   else: return '0'
 
-def bissecao(coef, a, b, tol, erro = 100, num = -1):
+def bissecao(coef, a, b, tol):
 
     fa  = f(a, *coef)
     fb = f(b, *coef)
@@ -44,6 +44,8 @@ def bissecao(coef, a, b, tol, erro = 100, num = -1):
         print("Raiz não está nesse intervalo! Verifique se segue o Teorema de Bolzano.")
         return
 
+    erro, num = 100, -1
+    
     tabela = PrettyTable()
 
     tabela.field_names = ["n", "a", "b", "c", "f(a)", "f(b)", "f(c)", "f(a)*f(c)","tolerancia"]
