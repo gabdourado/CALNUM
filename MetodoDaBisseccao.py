@@ -1,17 +1,7 @@
 """ NOTA: É importante perceber que o método só funciona para funções do polinômiais """
 
 from prettytable import PrettyTable
-
 from math import fabs
-
-metodo = r"""
-___  ___         _                 _                _           ______   _                                           
-|  \/  |        | |               | |              | |          | ___ \ (_)                                          
-| .  . |   ___  | |_    ___     __| |   ___      __| |   __ _   | |_/ /  _   ___   ___    ___    ___    __ _    ___  
-| |\/| |  / _ \ | __|  / _ \   / _` |  / _ \    / _` |  / _` |  | ___ \ | | / __| / __|  / _ \  / __|  / _` |  / _ \ 
-| |  | | |  __/ | |_  | (_) | | (_| | | (_) |  | (_| | | (_| |  | |_/ / | | \__ \ \__ \ |  __/ | (__  | (_| | | (_) |
-\_|  |_/  \___|  \__|  \___/   \__,_|  \___/    \__,_|  \__,_|  \____/  |_| |___/ |___/  \___|  \___|  \__,_|  \___/ 
-"""
 
 def f(x, *coeficientes):
     valor = 0
@@ -35,7 +25,7 @@ def sinal(fa, fc):
   elif fa * fc > 0: return '+'
   else: return '0'
 
-def bissecao(coef, a, b, tol):
+def metodo_bissecao(coef, a, b, tol):
 
     fa  = f(a, *coef)
     fb = f(b, *coef)
@@ -75,12 +65,10 @@ def bissecao(coef, a, b, tol):
 
 if __name__ == "__main__":
 
-    print(metodo)
-
     coef = list(map(float, input("Digite os coeficientes de cada termo (ex.: 1 0 -1 -2, para x³ - x - 2): ").split()))
 
     a, b = map(float, input("Digite o intervalo onde se encontra a raiz (ex.: 1 2): ").split())
 
     tol = float(input("Digite o fator de tolerância (ex.: 0.01): "))
 
-    bissecao(coef, a, b, tol)
+    metodo_bissecao(coef, a, b, tol)

@@ -1,25 +1,7 @@
 """ NOTA: É importante perceber que o método só funciona para funções do polinômiais """
 
 from prettytable import PrettyTable
-
 from math import fabs
-
-nome_metodo1 = r""" 
-___  ___         _                 _         
-|  \/  |        | |               | |        
-| .  . |   ___  | |_    ___     __| |   ___  
-| |\/| |  / _ \ | __|  / _ \   / _` |  / _ \ 
-| |  | | |  __/ | |_  | (_) | | (_| | | (_) |
-\_|  |_/  \___|  \__|  \___/   \__,_|  \___/ 
-"""
-nome_metodo2 = r""" 
-    _           ______         _                  ______                _                        
-   | |          |  ___|       | |                 | ___ \              (_)                       
- __| |   __ _   | |_    __ _  | |  ___    __ _    | |_/ |  ___    ___   _    ___    __ _    ___  
-/ _` |  / _` |  |  _|  / _` | | | / __|  / _` |   |  __/  / _ \  / __| | |  / __|  / _` |  / _ \ 
-| (_|| | (_| |  | |   | (_| | | | \__ \ | (_| |   | |    | (_) | \__ \ | | | (__  | (_| | | (_) |
-\__,_|  \__,_|  \_|    \__,_| |_| |___/  \__,_|   \_|     \___/  |___/ |_|  \___|  \__,_|  \___/ 
-"""
 
 def f(x, *coeficientes):
     valor = 0
@@ -43,7 +25,6 @@ def sinal(fa, fb):
   if fa * fb < 0: return '-'
   elif fa * fb > 0: return '+'
   else: return '0'
-
 
 def falsa_posicao(coef, a, b, tol):
 
@@ -85,9 +66,6 @@ def falsa_posicao(coef, a, b, tol):
     print(f"\nA raiz aproximada é {c} após {num} iterações com 𝜀 = {tol}")
 
 if __name__ == "__main__":
-   
-    print(nome_metodo1, end = '')
-    print(nome_metodo2)
 
     coef = list(map(float, input("Digite os coeficientes de cada termo (ex.: 1 0 -1 -2, para x^3 - x - 2): ").split()))
 
