@@ -28,7 +28,7 @@ def metodo_secante(coef, a, b, tol):
     f_atual = f(x_atual, *coef)
 
     if f_anterior*f_atual > 0:
-        print("Raiz não está nesse intervalo! Verifique se segue o Teorema de Bolzano.")
+        print("Verifique se segue o Teorema de Bolzano.")
         return
 
     erro, num = 100, 1

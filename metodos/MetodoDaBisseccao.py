@@ -12,48 +12,47 @@ def f(x, *coeficientes):
 
     return valor
 
-def calculaC(a, b, fa, fb):
-  c = (a*fb - b*fa)/(fb - fa)
-  return c
+def media(a, b):
+    return (a + b) / 2
 
 def prod(fa, fc):
     if fa * fc < 0: return -1
-    elif fa * fc > 0: return 1 
-    else: return 0 
+    elif fa * fc > 0: return 1
+    else: return 0
 
-def sinal(fa, fb):
-  if fa * fb < 0: return '-'
-  elif fa * fb > 0: return '+'
+def sinal(fa, fc):
+  if fa * fc < 0: return '-'
+  elif fa * fc > 0: return '+'
   else: return '0'
 
-def falsa_posicao(coef, a, b, tol):
+def metodo_bissecao(coef, a, b, tol):
 
     fa  = f(a, *coef)
     fb = f(b, *coef)
 
     if fa*fb > 0:
-        print("Raiz não está nesse intervalo! Verifique se segue o Teorema de Bolzano.")
+        print("Verifique se segue o Teorema de Bolzano.")
         return
 
     erro, num = 100, -1
-
+    
     tabela = PrettyTable()
 
-    tabela.field_names = ["n", "a", "b", "c", "f(a)", "f(b)", "f(c)", "f(a)*f(c)","|f(c)|"]
+    tabela.field_names = ["n", "a", "b", "c", "f(a)", "f(b)", "f(c)", "f(a)*f(c)","tolerancia"]
 
     while erro >= tol:
 
         fa  = f(a, *coef)
         fb = f(b, *coef)
 
-        c = calculaC(a, b, fa, fb)
+        c = media(a, b)
         fc = f(c, *coef)
 
         v = prod(fa, fc)
         sin = sinal(fa, fc)
 
         num += 1
-        erro = fabs(fc)
+        erro = fabs(a - b)
 
         tabela.add_row([num, f"{a:.6f}", f"{b:.6f}", f"{c:.6f}", f"{fa:.6f}", f"{fb:.6f}", f"{fc:.6f}", sin, f"{erro:.6f}"])
 
@@ -62,15 +61,14 @@ def falsa_posicao(coef, a, b, tol):
         else: break
 
     print(tabela)
-
-    print(f"\nA raiz aproximada é {c} após {num} iterações com 𝜀 = {tol}")
+    print(f"A raiz aproximada é {c} após {num} iterações com 𝜀 = {tol}")
 
 if __name__ == "__main__":
 
-    coef = list(map(float, input("Digite os coeficientes de cada termo (ex.: 1 0 -1 -2, para x^3 - x - 2): ").split()))
+    coef = list(map(float, input("Digite os coeficientes de cada termo (ex.: 1 0 -1 -2, para x³ - x - 2): ").split()))
 
-    a, b = map(float, input("Digite o intervalo (ex.: 1 2): ").split())
+    a, b = map(float, input("Digite o intervalo onde se encontra a raiz (ex.: 1 2): ").split())
 
     tol = float(input("Digite o fator de tolerância (ex.: 0.01): "))
 
-    falsa_posicao(coef, a, b, tol)
+    metodo_bissecao(coef, a, b, tol)

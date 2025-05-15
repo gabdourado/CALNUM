@@ -1,7 +1,7 @@
-from MetodoDaBisseccao import metodo_bissecao
-from MetodoDaFalsaPosicao import falsa_posicao
-from MetodoDeNewton import metodo_newton
-from MetodoDaSecante import metodo_secante
+from metodos.MetodoDaBisseccao import metodo_bissecao
+from metodos.MetodoDaFalsaPosicao import falsa_posicao
+from metodos.MetodoDeNewton import metodo_newton
+from metodos.MetodoDaSecante import metodo_secante
 
 def captura_valores():
     """Captura coeficientes, intervalo e tolerância do usuário"""

@@ -38,7 +38,7 @@ def metodo_newton(coef, a, b, tol):
     fb = f(b, *coef)
 
     if fa*fb > 0:
-        print("Raiz não está nesse intervalo! Verifique se segue o Teorema de Bolzano.")
+        print("Verifique se segue o Teorema de Bolzano.")
         return
     
     x_atual = (a + b) / 2
